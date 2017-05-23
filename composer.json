@@ -1,0 +1,15 @@
+{
+  "name": "seshat_api",
+  "type" : "project",
+  "require": {
+    "php": "7.0.15",
+    "slim/slim": "2.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "seshatapi": "src",
+      "config" : "src"
+    }
+  }
+
+}
