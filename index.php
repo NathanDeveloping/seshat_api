@@ -1,8 +1,8 @@
 <?php
 
 require "vendor/autoload.php";
-use slim\Slim;
 use seshatapi\controllers\DataController;
+use Slim\Slim;
 
 $app = new Slim();
 
