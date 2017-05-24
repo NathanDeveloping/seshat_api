@@ -27,12 +27,14 @@ class DataController
     public function getLabels() {
         $res = array();
         $tables = $this->getTables();
-        foreach($tables as $table) {
-            $etiquettes = $this->db->query('SELECT "META_INSTANCE_NAME" FROM "' . $table . '"');
-            if($etiquettes) {
-                $etiquettes = $etiquettes->fetchAll();
-                foreach ($etiquettes as $etiquette) {
-                    $res[] = $etiquette["META_INSTANCE_NAME"];
+        if(isset($tables)) {
+            foreach($tables as $table) {
+                $etiquettes = $this->db->query('SELECT "META_INSTANCE_NAME" FROM "' . $table . '"');
+                if($etiquettes) {
+                    $etiquettes = $etiquettes->fetchAll();
+                    foreach ($etiquettes as $etiquette) {
+                        $res[] = $etiquette["META_INSTANCE_NAME"];
+                    }
                 }
             }
         }
