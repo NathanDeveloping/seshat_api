@@ -35,7 +35,7 @@ class DataController
                     foreach ($etiquettes as $etiquette) {
                         $res[] = array('label' => $etiquette["META_INSTANCE_NAME"],
                                         'project' => $etiquette["INTRODUCTION_GROUP_PROJECT_NAME"],
-                                        'date' => $etiquette["DATE_GROUP_DATE "]
+                                        'date' => $etiquette["DATE_GROUP_DATE"]
                                 );
                     }
                 }
