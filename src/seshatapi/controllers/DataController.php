@@ -29,11 +29,14 @@ class DataController
         $tables = $this->getTables();
         if(isset($tables)) {
             foreach($tables as $table) {
-                $etiquettes = $this->db->query('SELECT "META_INSTANCE_NAME" FROM "' . $table . '"');
+                $etiquettes = $this->db->query('SELECT "META_INSTANCE_NAME", "INTRODUCTION_GROUP_PROJECT_NAME", "DATE_GROUP_DATE" FROM "' . $table . '"');
                 if($etiquettes) {
                     $etiquettes = $etiquettes->fetchAll();
                     foreach ($etiquettes as $etiquette) {
-                        $res[] = $etiquette["META_INSTANCE_NAME"];
+                        $res[] = array('label' => $etiquette["META_INSTANCE_NAME"],
+                                        'project' => $etiquette["INTRODUCTION_GROUP_PROJECT_NAME"],
+                                        'date' => $etiquette["DATE_GROUP_DATE "]
+                                );
                     }
                 }
             }
